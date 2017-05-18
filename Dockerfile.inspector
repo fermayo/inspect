@@ -1,0 +1,6 @@
+ARG orig
+FROM ${orig} AS orig
+FROM alpine:latest
+COPY --from=orig / /run/image
+WORKDIR /run/image
+CMD ["sh"]
